@@ -1,4 +1,4 @@
-# Heart Failure Prediction using RNN
+# Heart Failure Prediction using RNN Shiv Bharti
 This is a simple RNN (implemented with Gated Recurrent Units) for predicting a HF diagnosis given patient records.
 There are four different versions.
 
