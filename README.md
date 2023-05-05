@@ -1,5 +1,7 @@
 # Heart Failure Prediction using RNNs: A Reproducibility Study
-This repository contains the code and documentation for a reproduction study that aims to validate the findings of an experiment examining the potential benefits of employing deep learning techniques, particularly recurrent neural networks (RNNs), to improve the prediction of heart failure onset by capturing the temporal relationships among events documented in electronic health records (EHRs). The primary objective is to compare the performance of RNN models with conventional methods that do not consider temporality, aiming to enhance early detection and ultimately improve patient outcomes.
+This repository contains the code and documentation for a reproduction study that aims to validate the findings of an experiment examining the potential benefits of employing deep learning techniques, particularly recurrent neural networks (RNNs), to improve the prediction of heart failure onset by capturing the temporal relationships among events documented in electronic health records (EHRs). The primary objective is to compare the performance of RNN models with conventional methods that do not consider temporality, aiming to enhance early detection and ultimately improve patient outcomes. 
+
+[Here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5391725/) is the link to the original study and [here](https://github.com/mp2893/rnn_predict) is the github link to the original study
 
 # Scope of Reproducibility
 The scope of reproducibility for this experiment involves:
@@ -14,7 +16,7 @@ We aim to address the following claims from the original paper:
 * Temporal Information Utilization: The incorporation of temporal relationships among events in EHRs through RNN models provides a significant advantage in predicting heart failure onset over conventional methods that do not account for temporality.
 
 # Data
-This reproduction study uses the MIMIC-III Clinical Database as the primary data source. To gain access to the dataset, follow the instructions provided here.
+This reproduction study uses the MIMIC-III Clinical Database as the primary data source. To gain access to the dataset, follow the instructions provided [here](https://physionet.org/content/mimiciii/1.4/).
 
 Once you have access to the MIMIC-III dataset, download and store the data files in the data/ directory within the repository.
 
