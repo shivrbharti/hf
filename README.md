@@ -1,26 +1,27 @@
-# Heart Failure Prediction using RNN
-This is a simple RNN (implemented with Gated Recurrent Units) for predicting a HF diagnosis given patient records.
-There are four different versions.
+# Heart Failure Prediction using RNNs: A Reproducibility Study
+This repository contains the code and documentation for a reproduction study that aims to validate the findings of an experiment examining the potential benefits of employing deep learning techniques, particularly recurrent neural networks (RNNs), to improve the prediction of heart failure onset by capturing the temporal relationships among events documented in electronic health records (EHRs). The primary objective is to compare the performance of RNN models with conventional methods that do not consider temporality, aiming to enhance early detection and ultimately improve patient outcomes.
 
-1. gru_onehot_hf.py: This uses one-hot encoding for the medical code embedding
-2. gru_onehot_time_hf.py: This uses one-hot encoding for the medical code embedding. This uses time information in addition to the code sequences
-3. gru_emb_hf.py: This uses pre-trained medical code embeddings. 
-4. gru_emb_time_hf.py: This uses pre-trained medical code embeddings. This suses time information in addition to the code sequences.
+# Scope of Reproducibility
+The scope of reproducibility for this experiment involves:
+* Re-implementing the original study's methodology
+* Validating the results by comparing the performance of RNN models, which utilize gated recurrent units (GRUs), against conventional methods such as regularized logistic regression, multilayer perceptron (MLP), support vector machine (SVM), and K-nearest neighbor (KNN) classifiers
+* Investigating the enhanced model performance in predicting initial diagnosis of heart failure within a 12- to 18-month observation window by leveraging temporal relationships among events in EHRs
 
-The data are synthetic and make no sense at all. It is intended only for testing the codes.
+# Addressed Claims from the Original Paper
+We aim to address the following claims from the original paper:
 
-1. sequences.pkl: This is a pickled list of list of integers. Each integer is assumed to be some medical code.
-2. times.pkl: This is a pickled list of list of integers. Each integer is assumed to the time at which the medical code occurred.
-3. labels.pkl: This is a pickled list of 0 and 1s.
-4. emb.pkl: This is a randomly generated code embedding of size 100 X 100
+* Improved Prediction Performance: The use of RNN models with GRUs leads to better performance in predicting the initial diagnosis of heart failure within a 12- to 18-month observation window compared to conventional methods such as regularized logistic regression, MLP, SVM, and KNN classifiers.
+* Temporal Information Utilization: The incorporation of temporal relationships among events in EHRs through RNN models provides a significant advantage in predicting heart failure onset over conventional methods that do not account for temporality.
 
-# Requirement
-Python and Theano are required to run the scripts
+# Data
+This reproduction study uses the MIMIC-III Clinical Database as the primary data source. To gain access to the dataset, follow the instructions provided here.
 
-# How to Execute
-1. python gru_onehot_hf.py sequences.pkl labels.pkl <output>
-2. python gru_onehot_time_hf.py sequences.pkl times.pkl labels.pkl <output>
-3. python gru_emb_hf.py sequences.pkl labels.pkl emb.pkl <output>
-4. python gru_emb_time_hf.py sequences.pkl times.pkl labels.pkl emb.pkl <output>
+Once you have access to the MIMIC-III dataset, download and store the data files in the data/ directory within the repository.
 
-All scripts will divide the data into training set, validation set, and test set. They will run for a fixed number of epochs. At each epoch, "Validation AUC" will be calculated using the validation set, and if it is the best "Validation AUC" so far, the test set will be used to calculate "Test AUC". The model with the best "Test AUC" will be saved at the end of the training.
+# Getting Started
+* Prerequisites
+* Python 3.7 or later
+* TensorFlow 2.6 or later
+* scikit-learn 0.24 or later
+* pandas 1.3 or later
+* NumPy 1.21 or later
